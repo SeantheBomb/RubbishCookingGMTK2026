@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoxOrder" format=3 uid="uid://bviemrxfa31gw"]
+
+[ext_resource type="Script" uid="uid://duhrhm3xo8dps" path="res://scripts/cooking/fox_order.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/stat_board/profiles/challenge_sweet_sour_purist.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+order_name = "Sweet & Sour Purist"
+challenge_profile = ExtResource("2")
+patience_seconds = 115.0
+reward_points = 35

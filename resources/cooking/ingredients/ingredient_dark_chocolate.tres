@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://gketv8vil836"]
+
+[ext_resource type="Script" uid="uid://dwahxcj28ne2j" path="res://scripts/cooking/ingredient.gd" id="1"]
+[ext_resource type="Script" uid="uid://dwj72ik5ocucf" path="res://scripts/stat_board/stat_profile.gd" id="2"]
+
+[sub_resource type="Resource" id="SubResource_1"]
+script = ExtResource("2")
+values = {
+&"aromatic": 0.4,
+&"astringent": 0.4,
+&"bitter": 0.7,
+&"fatty": 0.5,
+&"salty": 0.05,
+&"sour": 0.1,
+&"sweet": 0.5,
+&"umami": 0.2
+}
+
+[resource]
+script = ExtResource("1")
+id = &"dark_chocolate"
+display_name = "Dark Chocolate"
+flavor_profile = SubResource("SubResource_1")

@@ -1,7 +1,7 @@
-[gd_resource type="Resource" load_steps=4 format=3]
+[gd_resource type="Resource" script_class="StatBoardScenario" format=3 uid="uid://dihv8aqs0yr8l"]
 
-[ext_resource type="Script" path="res://scripts/stat_board/stat_board_scenario.gd" id="1"]
-[ext_resource type="Resource" path="res://resources/stat_board/profiles/challenge_hard.tres" id="2"]
+[ext_resource type="Script" uid="uid://b3fav00a3w6bh" path="res://scripts/stat_board/stat_board_scenario.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/stat_board/profiles/challenge_perfectionist.tres" id="2"]
 [ext_resource type="Resource" path="res://resources/stat_board/profiles/dish_starter.tres" id="3"]
 
 [resource]

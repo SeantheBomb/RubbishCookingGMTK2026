@@ -1,7 +1,10 @@
+@tool
 class_name StatProfile
 extends Resource
 ## A shape's data: one value per axis id. Used for both the challenge
 ## target and the cooked dish.
+## @tool so get_value() still works when StatShape draws in the editor
+## - without this, the editor loads it as an inert placeholder.
 
 @export var values: Dictionary = {} # StringName axis id -> float
 

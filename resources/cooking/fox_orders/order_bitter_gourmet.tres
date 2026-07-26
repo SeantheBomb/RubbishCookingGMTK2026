@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoxOrder" format=3 uid="uid://bj1dip2hdmm5n"]
+
+[ext_resource type="Script" uid="uid://duhrhm3xo8dps" path="res://scripts/cooking/fox_order.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/stat_board/profiles/challenge_bitter_gourmet.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+order_name = "Bitter Gourmet"
+challenge_profile = ExtResource("2")
+patience_seconds = 105.0
+reward_points = 30

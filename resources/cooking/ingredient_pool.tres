@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="IngredientPool" format=3 uid="uid://cjafjnb4wtbj2"]
+
+[ext_resource type="Script" uid="uid://fys2ix1w3fhe" path="res://scripts/cooking/ingredient_pool.gd" id="1"]
+[ext_resource type="Script" uid="uid://dwahxcj28ne2j" path="res://scripts/cooking/ingredient.gd" id="1_2db0p"]
+[ext_resource type="Resource" uid="uid://dpnab6lo52ea2" path="res://resources/cooking/ingredients/ingredient_garlic.tres" id="2"]
+[ext_resource type="Resource" uid="uid://cg74yx8wjxqe2" path="res://resources/cooking/ingredients/ingredient_cheese.tres" id="3"]
+[ext_resource type="Resource" uid="uid://dr0nte27qemrq" path="res://resources/cooking/ingredients/ingredient_soy_sauce.tres" id="4"]
+[ext_resource type="Resource" uid="uid://gketv8vil836" path="res://resources/cooking/ingredients/ingredient_dark_chocolate.tres" id="5"]
+[ext_resource type="Resource" uid="uid://8enbfpmhdaub" path="res://resources/cooking/ingredients/ingredient_bananas.tres" id="6"]
+[ext_resource type="Resource" uid="uid://owwocviaus7i" path="res://resources/cooking/ingredients/ingredient_broccoli.tres" id="7"]
+[ext_resource type="Resource" uid="uid://ddbcfq1nu5qq4" path="res://resources/cooking/ingredients/ingredient_onion.tres" id="8"]
+[ext_resource type="Resource" uid="uid://chii4dyvaylds" path="res://resources/cooking/ingredients/ingredient_yogurt.tres" id="9"]
+[ext_resource type="Resource" uid="uid://bjnhhixl6uyky" path="res://resources/cooking/ingredients/ingredient_olive_oil.tres" id="10"]
+[ext_resource type="Resource" uid="uid://dbbww42asq6cv" path="res://resources/cooking/ingredients/ingredient_potatoes.tres" id="11"]
+
+[resource]
+script = ExtResource("1")
+ingredients = Array[ExtResource("1_2db0p")]([ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11")])

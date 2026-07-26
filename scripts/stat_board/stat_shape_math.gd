@@ -27,23 +27,38 @@ static func get_frame_points(config: StatBoardConfig) -> PackedVector2Array:
 static func polygon_contains_point(polygon: PackedVector2Array, point: Vector2) -> bool:
 	return polygon.size() >= 3 and Geometry2D.is_point_in_polygon(point, polygon)
 
+static func get_bounding_box(polygon: PackedVector2Array) -> Rect2:
+	var min_pos := polygon[0]
+	var max_pos := polygon[0]
+	for p in polygon:
+		min_pos.x = minf(min_pos.x, p.x)
+		min_pos.y = minf(min_pos.y, p.y)
+		max_pos.x = maxf(max_pos.x, p.x)
+		max_pos.y = maxf(max_pos.y, p.y)
+	return Rect2(min_pos, max_pos - min_pos)
+
+## An empty dish (no ingredients placed) still has one point per axis,
+## all collapsed to the origin - a zero-area "polygon" that would
+## otherwise register every dart as a free hit. Callers should refuse
+## to throw darts into a polygon this returns false for.
+static func polygon_has_area(polygon: PackedVector2Array) -> bool:
+	if polygon.size() < 3:
+		return false
+	var bounds := get_bounding_box(polygon)
+	return bounds.size.x > 0.01 and bounds.size.y > 0.01
+
 static func random_point_in_polygon(polygon: PackedVector2Array, rng: RandomNumberGenerator) -> Vector2:
 	if polygon.size() < 3:
 		return Vector2.ZERO
 
-	var min_x := polygon[0].x
-	var max_x := polygon[0].x
-	var min_y := polygon[0].y
-	var max_y := polygon[0].y
-	for p in polygon:
-		min_x = minf(min_x, p.x)
-		max_x = maxf(max_x, p.x)
-		min_y = minf(min_y, p.y)
-		max_y = maxf(max_y, p.y)
+	var bounds := get_bounding_box(polygon)
 
 	# Rejection sampling: cheap and plenty accurate for a 5-6 sided convex-ish shape.
 	for attempt in 100:
-		var candidate := Vector2(rng.randf_range(min_x, max_x), rng.randf_range(min_y, max_y))
+		var candidate := Vector2(
+			rng.randf_range(bounds.position.x, bounds.position.x + bounds.size.x),
+			rng.randf_range(bounds.position.y, bounds.position.y + bounds.size.y)
+		)
 		if Geometry2D.is_point_in_polygon(candidate, polygon):
 			return candidate
 	return polygon[0]

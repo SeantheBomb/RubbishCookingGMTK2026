@@ -1,7 +1,6 @@
-[gd_resource type="Resource" script_class="StatBoardConfig" format=3 uid="uid://cwu14ys5id3wu"]
+[gd_resource type="Resource" load_steps=10 format=3]
 
-[ext_resource type="Script" uid="uid://b5yej0a0gt4m7" path="res://scripts/stat_board/stat_board_config.gd" id="1"]
-[ext_resource type="Script" uid="uid://dfhy20v0qtw85" path="res://scripts/stat_board/stat_axis.gd" id="1_m2cti"]
+[ext_resource type="Script" path="res://scripts/stat_board/stat_board_config.gd" id="1"]
 [ext_resource type="Resource" path="res://resources/stat_board/axes/axis_salty.tres" id="2"]
 [ext_resource type="Resource" path="res://resources/stat_board/axes/axis_sour.tres" id="3"]
 [ext_resource type="Resource" path="res://resources/stat_board/axes/axis_bitter.tres" id="4"]
@@ -13,4 +12,6 @@
 
 [resource]
 script = ExtResource("1")
-axes = Array[ExtResource("1_m2cti")]([ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9")])
+axes = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9")]
+radius = 55.0
+max_value = 1.0

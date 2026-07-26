@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://bjnhhixl6uyky"]
+
+[ext_resource type="Script" uid="uid://dwahxcj28ne2j" path="res://scripts/cooking/ingredient.gd" id="1"]
+[ext_resource type="Script" uid="uid://dwj72ik5ocucf" path="res://scripts/stat_board/stat_profile.gd" id="2"]
+
+[sub_resource type="Resource" id="SubResource_1"]
+script = ExtResource("2")
+values = {
+&"aromatic": 0.15,
+&"astringent": 0.05,
+&"bitter": 0.15,
+&"fatty": 0.9,
+&"salty": 0.05,
+&"sour": 0.05,
+&"sweet": 0.05,
+&"umami": 0.1
+}
+
+[resource]
+script = ExtResource("1")
+id = &"olive_oil"
+display_name = "Olive Oil"
+flavor_profile = SubResource("SubResource_1")

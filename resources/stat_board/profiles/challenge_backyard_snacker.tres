@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/stat_board/stat_profile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+values = {
+&"salty": 0.70,
+&"sour": 0.25,
+&"bitter": 0.25,
+&"astringent": 0.25,
+&"aromatic": 0.70,
+&"sweet": 0.25,
+&"fatty": 0.25,
+&"umami": 0.25
+}

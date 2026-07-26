@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoxOrder" format=3 uid="uid://u2vwhhhwa7pb"]
+
+[ext_resource type="Script" uid="uid://duhrhm3xo8dps" path="res://scripts/cooking/fox_order.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/stat_board/profiles/challenge_zesty_traveler.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+order_name = "Zesty Traveler"
+challenge_profile = ExtResource("2")
+patience_seconds = 80.0
+reward_points = 20

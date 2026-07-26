@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/cooking/ingredient_token.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/stat_board/mini_board_config.tres" id="2"]
+[ext_resource type="Resource" path="res://resources/stat_board/default_theme.tres" id="3"]
+
+[node name="IngredientToken" type="Control"]
+custom_minimum_size = Vector2(72, 72)
+size = Vector2(72, 72)
+script = ExtResource("1")
+mini_board_config = ExtResource("2")
+tooltip_theme = ExtResource("3")
+
+[node name="SecondaryBorder" type="ColorRect" parent="."]
+unique_name_in_owner = true
+mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.75, 0.68, 0.5, 1)
+
+[node name="PrimaryFill" type="ColorRect" parent="."]
+unique_name_in_owner = true
+mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+color = Color(0.75, 0.68, 0.5, 1)
+
+[node name="NameLabel" type="Label" parent="."]
+unique_name_in_owner = true
+mouse_filter = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text = ""

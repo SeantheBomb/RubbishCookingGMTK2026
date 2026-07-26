@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://8enbfpmhdaub"]
+
+[ext_resource type="Script" uid="uid://dwahxcj28ne2j" path="res://scripts/cooking/ingredient.gd" id="1"]
+[ext_resource type="Script" uid="uid://dwj72ik5ocucf" path="res://scripts/stat_board/stat_profile.gd" id="2"]
+
+[sub_resource type="Resource" id="SubResource_1"]
+script = ExtResource("2")
+values = {
+&"aromatic": 0.3,
+&"astringent": 0.05,
+&"bitter": 0.05,
+&"fatty": 0.1,
+&"salty": 0.02,
+&"sour": 0.15,
+&"sweet": 0.6,
+&"umami": 0.05
+}
+
+[resource]
+script = ExtResource("1")
+id = &"bananas"
+display_name = "Bananas"
+flavor_profile = SubResource("SubResource_1")

@@ -5,12 +5,12 @@
 [resource]
 script = ExtResource("1")
 values = {
-&"salty": 0.8,
-&"sour": 0.1,
-&"bitter": 0.15,
-&"astringent": 0.1,
-&"aromatic": 0.2,
-&"sweet": 0.05,
-&"fatty": 0.1,
-&"umami": 0.9
+&"salty": 0.05,
+&"sour": 0.05,
+&"bitter": 0.05,
+&"astringent": 0.05,
+&"aromatic": 0.70,
+&"sweet": 0.70,
+&"fatty": 0.05,
+&"umami": 0.70
 }

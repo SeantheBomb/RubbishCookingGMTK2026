@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://owwocviaus7i"]
+
+[ext_resource type="Script" uid="uid://dwahxcj28ne2j" path="res://scripts/cooking/ingredient.gd" id="1"]
+[ext_resource type="Script" uid="uid://dwj72ik5ocucf" path="res://scripts/stat_board/stat_profile.gd" id="2"]
+
+[sub_resource type="Resource" id="SubResource_1"]
+script = ExtResource("2")
+values = {
+&"aromatic": 0.15,
+&"astringent": 0.25,
+&"bitter": 0.45,
+&"fatty": 0.05,
+&"salty": 0.05,
+&"sour": 0.1,
+&"sweet": 0.1,
+&"umami": 0.15
+}
+
+[resource]
+script = ExtResource("1")
+id = &"broccoli"
+display_name = "Broccoli"
+flavor_profile = SubResource("SubResource_1")

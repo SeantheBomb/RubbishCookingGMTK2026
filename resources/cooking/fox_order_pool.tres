@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/cooking/fox_order_pool.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_easygoing_pup.tres" id="2"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_backyard_snacker.tres" id="3"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_comfort_food_fan.tres" id="4"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_zesty_traveler.tres" id="5"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_umami_lover.tres" id="6"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_bitter_gourmet.tres" id="7"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_sweet_sour_purist.tres" id="8"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_salty_umami_purist.tres" id="9"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_aromatic_perfectionist.tres" id="10"]
+[ext_resource type="Resource" path="res://resources/cooking/fox_orders/order_perfectionist.tres" id="11"]
+
+[resource]
+script = ExtResource("1")
+orders = [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("6"), ExtResource("7"), ExtResource("8"), ExtResource("9"), ExtResource("10"), ExtResource("11")]

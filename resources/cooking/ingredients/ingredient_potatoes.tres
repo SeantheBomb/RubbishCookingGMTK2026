@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dbbww42asq6cv"]
+
+[ext_resource type="Script" uid="uid://dwahxcj28ne2j" path="res://scripts/cooking/ingredient.gd" id="1"]
+[ext_resource type="Script" uid="uid://dwj72ik5ocucf" path="res://scripts/stat_board/stat_profile.gd" id="2"]
+
+[sub_resource type="Resource" id="SubResource_1"]
+script = ExtResource("2")
+values = {
+&"aromatic": 0.05,
+&"astringent": 0.03,
+&"bitter": 0.03,
+&"fatty": 0.4,
+&"salty": 0.05,
+&"sour": 0.03,
+&"sweet": 0.1,
+&"umami": 0.1
+}
+
+[resource]
+script = ExtResource("1")
+id = &"potatoes"
+display_name = "Potatoes"
+flavor_profile = SubResource("SubResource_1")

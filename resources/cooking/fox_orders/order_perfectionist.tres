@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FoxOrder" format=3 uid="uid://bn63xlkbtcamu"]
+
+[ext_resource type="Script" uid="uid://duhrhm3xo8dps" path="res://scripts/cooking/fox_order.gd" id="1"]
+[ext_resource type="Resource" path="res://resources/stat_board/profiles/challenge_perfectionist.tres" id="2"]
+
+[resource]
+script = ExtResource("1")
+order_name = "The Perfectionist"
+challenge_profile = ExtResource("2")
+patience_seconds = 180.0
+reward_points = 100

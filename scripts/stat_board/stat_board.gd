@@ -1,10 +1,19 @@
+@tool
 class_name StatBoard
 extends Node2D
 ## Draws the pentagon frame: web rings, spokes, outline, axis icons/labels.
 ## Purely a function of config + theme_data - reskin by swapping resources.
+## @tool + the setters below make this render live in the editor's 2D
+## view - assign config/theme_data and see the board without hitting play.
 
-@export var config: StatBoardConfig
-@export var theme_data: StatBoardTheme
+@export var config: StatBoardConfig:
+	set(value):
+		config = value
+		queue_redraw()
+@export var theme_data: StatBoardTheme:
+	set(value):
+		theme_data = value
+		queue_redraw()
 
 func _ready() -> void:
 	queue_redraw()

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://cg74yx8wjxqe2"]
+
+[ext_resource type="Script" uid="uid://dwahxcj28ne2j" path="res://scripts/cooking/ingredient.gd" id="1"]
+[ext_resource type="Script" uid="uid://dwj72ik5ocucf" path="res://scripts/stat_board/stat_profile.gd" id="2"]
+
+[sub_resource type="Resource" id="SubResource_1"]
+script = ExtResource("2")
+values = {
+&"aromatic": 0.3,
+&"astringent": 0.3,
+&"bitter": 0.1,
+&"fatty": 0.7,
+&"salty": 0.6,
+&"sour": 0.2,
+&"sweet": 0.15,
+&"umami": 0.6
+}
+
+[resource]
+script = ExtResource("1")
+id = &"cheese"
+display_name = "Cheese"
+flavor_profile = SubResource("SubResource_1")
