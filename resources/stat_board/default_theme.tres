@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/stat_board/stat_board_theme.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+web_color = Color(0.5, 0.45, 0.2, 0.5)
+outline_color = Color(1, 1, 1, 1)
+web_ring_count = 4
+challenge_outline_color = Color(0.9, 0.8, 0.3, 1)
+challenge_fill_color = Color(0.9, 0.8, 0.3, 0.15)
+dish_outline_color = Color(0.5, 0.9, 0.5, 1)
+dish_fill_color = Color(0.5, 0.9, 0.5, 0.35)
+dart_hit_color = Color(0, 1, 0, 1)
+dart_miss_color = Color(1, 0, 0, 1)

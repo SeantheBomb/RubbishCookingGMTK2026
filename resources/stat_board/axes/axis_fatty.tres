@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/stat_board/stat_axis.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"fatty"
+display_name = "Fatty"
+color = Color(0.95, 0.85, 0.3, 1)
