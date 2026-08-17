@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://bymp1yqclktsw"]
+
+[ext_resource type="Script" uid="uid://5uv0pv7x412w" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+
+[node name="SneakySnacksMainMenu" type="Control" unique_id=1839997587]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=2004115882]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=2004115883]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+stretch_mode = 0
+
+[node name="Frame" type="Control" parent="AspectRatioContainer" unique_id=2004115884]
+clip_contents = true
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="AspectRatioContainer/Frame" unique_id=2004115885]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButtons" type="VBoxContainer" parent="AspectRatioContainer/Frame/CenterContainer" unique_id=2004115886]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="StartButton" type="Button" parent="AspectRatioContainer/Frame/CenterContainer/MenuButtons" unique_id=2004115887]
+custom_minimum_size = Vector2(240, 56)
+layout_mode = 2
+text = "Start"
+
+[node name="InstructionsButton" type="Button" parent="AspectRatioContainer/Frame/CenterContainer/MenuButtons" unique_id=2004115888]
+custom_minimum_size = Vector2(240, 56)
+layout_mode = 2
+text = "Instructions"
+
+[node name="ExitButton" type="Button" parent="AspectRatioContainer/Frame/CenterContainer/MenuButtons" unique_id=2004115889]
+custom_minimum_size = Vector2(240, 56)
+layout_mode = 2
+text = "Exit"
+
+[node name="InstructionsOverlay" type="Control" parent="AspectRatioContainer/Frame" unique_id=2004115890]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OverlayBackground" type="ColorRect" parent="AspectRatioContainer/Frame/InstructionsOverlay" unique_id=2004115891]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.7)
+
+[node name="OverlayCenterContainer" type="CenterContainer" parent="AspectRatioContainer/Frame/InstructionsOverlay" unique_id=2004115892]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OverlayPanel" type="PanelContainer" parent="AspectRatioContainer/Frame/InstructionsOverlay/OverlayCenterContainer" unique_id=2004115893]
+layout_mode = 2
+
+[node name="OverlayVBox" type="VBoxContainer" parent="AspectRatioContainer/Frame/InstructionsOverlay/OverlayCenterContainer/OverlayPanel" unique_id=2004115894]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ColumnsHBox" type="HBoxContainer" parent="AspectRatioContainer/Frame/InstructionsOverlay/OverlayCenterContainer/OverlayPanel/OverlayVBox" unique_id=2004115895]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="ColumnOneLabel" type="Label" parent="AspectRatioContainer/Frame/InstructionsOverlay/OverlayCenterContainer/OverlayPanel/OverlayVBox/ColumnsHBox" unique_id=2004115896]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+text = "TODO: instructions column 1"
+autowrap_mode = 3
+
+[node name="ColumnTwoLabel" type="Label" parent="AspectRatioContainer/Frame/InstructionsOverlay/OverlayCenterContainer/OverlayPanel/OverlayVBox/ColumnsHBox" unique_id=2004115897]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+text = "TODO: instructions column 2"
+autowrap_mode = 3
+
+[node name="CloseButton" type="Button" parent="AspectRatioContainer/Frame/InstructionsOverlay/OverlayCenterContainer/OverlayPanel/OverlayVBox" unique_id=2004115898]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Close"
+
+[connection signal="pressed" from="AspectRatioContainer/Frame/CenterContainer/MenuButtons/StartButton" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Frame/CenterContainer/MenuButtons/InstructionsButton" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Frame/CenterContainer/MenuButtons/ExitButton" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/Frame/InstructionsOverlay/OverlayCenterContainer/OverlayPanel/OverlayVBox/CloseButton" to="." method="_on_instructions_close_pressed"]

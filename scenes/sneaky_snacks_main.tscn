@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://dpdhnpmc0w36d"]
+
+[ext_resource type="Texture2D" uid="uid://cwdgirvhqou4g" path="res://resources/UI/UITextures/T_StreetBackground_00.png" id="1_00qru"]
+[ext_resource type="Texture2D" uid="uid://cweva05uureg2" path="res://resources/UI/UITextures/T_FrontWall_00.png" id="2_km8yl"]
+[ext_resource type="Texture2D" uid="uid://buny7itn75ars" path="res://resources/UI/UITextures/T_Light_00.png" id="2_rr4u5"]
+[ext_resource type="Script" uid="uid://dtis63qe2feoc" path="res://scripts/round/sneaky_snacks_main.gd" id="3_roundctl"]
+[ext_resource type="Script" uid="uid://0o8koqbu38q2" path="res://scripts/round/round_timer_display.gd" id="4_timerdisp"]
+[ext_resource type="PackedScene" uid="uid://cyyyuw8cxk3o6" path="res://scenes/bin.tscn" id="5_binscene"]
+[ext_resource type="PackedScene" uid="uid://b1rl52rdyj411" path="res://scenes/food_spawner.tscn" id="6_spawnerscene"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_timerbox"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0.156863, 0.215686, 0.258824, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="SneakySnacksMain" type="Control" unique_id=1666880602]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_roundctl")
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1412622209]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1935921523]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+stretch_mode = 0
+
+[node name="Frame" type="Control" parent="AspectRatioContainer" unique_id=1044829371]
+clip_children = 2
+clip_contents = true
+layout_mode = 2
+
+[node name="Background" type="TextureRect" parent="AspectRatioContainer/Frame" unique_id=338595459]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_00qru")
+expand_mode = 1
+
+[node name="Light" type="TextureRect" parent="AspectRatioContainer/Frame" unique_id=1787915771]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_rr4u5")
+expand_mode = 1
+
+[node name="Wall" type="TextureRect" parent="AspectRatioContainer/Frame" unique_id=212071661]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_km8yl")
+expand_mode = 1
+
+[node name="PhysicsLayer" type="SubViewportContainer" parent="AspectRatioContainer/Frame" unique_id=660999421]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="AspectRatioContainer/Frame/PhysicsLayer" unique_id=1215586205]
+transparent_bg = true
+handle_input_locally = false
+physics_object_picking = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="PhysicsWorld" type="Node2D" parent="AspectRatioContainer/Frame/PhysicsLayer/SubViewport" unique_id=317766743]
+position = Vector2(-112, 0.14181519)
+
+[node name="Bin" parent="AspectRatioContainer/Frame/PhysicsLayer/SubViewport/PhysicsWorld" unique_id=1582453736 instance=ExtResource("5_binscene")]
+position = Vector2(1100, 628)
+scale = Vector2(2.810099, 2.8799999)
+
+[node name="FoodSpawner" parent="AspectRatioContainer/Frame/PhysicsLayer/SubViewport/PhysicsWorld" unique_id=1798830109 instance=ExtResource("6_spawnerscene")]
+scale = Vector2(1.0000024, 1)
+
+[node name="TimeDisplay" type="PanelContainer" parent="AspectRatioContainer/Frame" unique_id=-1381882825]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 24.0
+offset_bottom = 24.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_timerbox")
+script = ExtResource("4_timerdisp")
+
+[node name="TimeLabel" type="Label" parent="AspectRatioContainer/Frame/TimeDisplay" unique_id=-1381882824]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.74902, 0.7451, 0.67059, 1)
+theme_override_font_sizes/font_size = 28
+text = "22:00"

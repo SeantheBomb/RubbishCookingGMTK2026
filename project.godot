@@ -11,14 +11,25 @@ config_version=5
 [application]
 
 config/name="RubbishCooking"
-run/main_scene="res://scenes/stat_board_test.tscn"
+run/main_scene="res://scenes/sneaky_snacks_mainmenu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+NightCountdown="*res://scripts/round/night_countdown.gd"
+RoundManager="*res://scripts/round/round_manager.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[layer_names]
+
+2d_physics/layer_1="Bin"
+2d_physics/layer_2="Food"
+2d_physics/layer_3="Lid"
 
 [physics]
 

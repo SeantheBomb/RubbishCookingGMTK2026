@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ctilcvsmnokbp"]
+
+[ext_resource type="Texture2D" uid="uid://cwdgirvhqou4g" path="res://resources/UI/UITextures/T_StreetBackground_00.png" id="1_hbb72"]
+
+[node name="SneakySnacksUiTest" type="Control" unique_id=1965839574]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0002908766
+mouse_filter = 2
+mouse_behavior_recursive = 2
+
+[node name="Backdrop" type="ColorRect" parent="." unique_id=1080586570]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=40911984]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.777
+stretch_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer" unique_id=814799966]
+layout_mode = 2
+texture = ExtResource("1_hbb72")
+expand_mode = 1

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b1rl52rdyj411"]
+
+[ext_resource type="Script" uid="uid://b6wtte3ficjll" path="res://scripts/round/food_spawner.gd" id="1_spawnerscript"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lid"]
+size = Vector2(80, 80)
+
+[node name="FoodSpawner" type="Node2D" unique_id=944563909]
+script = ExtResource("1_spawnerscript")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=358896593]
+wait_time = 2.0
+
+[node name="Lid" type="Area2D" parent="." unique_id=1008042362]
+position = Vector2(0, 30)
+collision_layer = 4
+collision_mask = 2
+
+[node name="LidShape" type="CollisionShape2D" parent="Lid" unique_id=1424817221]
+scale = Vector2(3.0399992, 1)
+shape = SubResource("RectangleShape2D_lid")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=1464638589]
+position = Vector2(0, -110)
